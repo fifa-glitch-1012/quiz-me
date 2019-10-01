@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  post 'contact', to: 'static_pages#leave_feedback', as: 'leave_feedback'
+  get 'contact', to: 'static_pages#contact', as: 'contact'
+  post 'student_feedback', to: 'static_pages#student_feedback', as: 'student_feedback'
+  get 'student-info', to: 'static_pages#student_info', as: 'student_info'
   get 'profile', to: 'pages#profile', as: 'profile'
   get 'review', to: 'pages#review', as: 'review'
   get 'welcome', to: 'static_pages#welcome', as: 'welcome'

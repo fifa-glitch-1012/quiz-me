@@ -1,0 +1,44 @@
+<h1>Student Info Form</h1>
+
+
+<% if local_assigns.has_key? :status_msg %>
+   <p><%= status_msg %></p>
+<% end %>
+
+ <%= form_with url: student_feedback_path, local: true, method: :post do %>
+
+  <div>
+    <%= label_tag "first_name" %>
+    <%= text_field_tag "first_name", feedback.fetch(:first_name, nil) %>
+  </div>
+
+    <div>
+        <%= label_tag "last_name" %>
+        <%= text_field_tag "last_name", feedback.fetch(:last_name, nil) %>
+    </div>
+
+
+    <div>
+        <span>Are you a resident of Tennessee?</span>
+        <div>
+            <%= radio_button_tag "reply", true, feedback.fetch(:reply, nil) == true.to_s %>
+            <%= label_tag "reply_yes", 'Yes (In-State Student)' %>
+        </div>
+        <div>
+            <%= radio_button_tag "reply", false, feedback.fetch(:reply, nil) == false.to_s %>
+            <%= label_tag "reply_no", 'No (Out-of-State Student)' %>
+         </div>
+    </div>
+    <div>
+        <%= label_tag "student_classification" %>
+        <%= select_tag "student_classification", options_for_select([ "Freshman", "Sophmore", "Junior", "Senior" ], feedback.fetch(:student_classification, "")), prompt: 'Choose one...' %>
+    </div>
+
+    <div>
+        <%= label_tag "mailing_address" %><br />
+        <%= text_area_tag "mailing_address", feedback.fetch(:mailing_address, nil), size: "15x15" %>
+    </div>
+    <%= submit_tag "Send Feedback" %>
+
+
+ <% end %>
