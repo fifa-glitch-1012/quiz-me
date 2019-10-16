@@ -1,5 +1,23 @@
-<h1> Books </h1>
+<h1>Books</h1>
 
 
+<% books.each do |book| %>
+    <div id="<%= dom_id(book) %> ">
+        <li><%= book.title %></li>
 
-    
+        <%
+        book_info = [book.publisher, book.publication_date, book.isbn, book.genre]
+        books.each do |book| 
+        %>
+       <div>
+        <ul>
+            <li><%= book.publisher %></li>
+            <li><%= book.publication_date %></li>
+            <li><%= book.isbn %></li>
+            <li><%= book.genre %></li>
+        </ul>
+        </div>
+        <% end %>
+    </div>
+
+<% end %>           
