@@ -1,2 +1,16 @@
-<h1>Reviews#index</h1>
-<p>Find me in app/views/reviews/index.html.erb</p>
+<h1>Reviews</h1>
+
+
+<% reviews.each do |review| %>
+    <div id="<%= dom_id(review) %> ">
+        <p><%= review.summary %></li></p>
+        <div>
+            <p>
+            <%= "#{'★' * review.score}#{'☆' * (5 - review.score)}" %>
+            </p>
+            <p><%= review.full_text %></p>
+        </div>
+    </div>
+
+
+<% end %>     

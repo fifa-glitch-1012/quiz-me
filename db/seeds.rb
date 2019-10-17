@@ -19,9 +19,9 @@ b3 = Book.create!(title: 'The Colour of Magic', publisher: 'Colin Smythe', publi
 
 
 
-a1 = Author.create!(first_name: 'Terry	', last_name: 'Pratchett', webpage:"nil", dob: Date.new(1948, 4, 28), dod: Date.new(2015, 3, 12))
+a1 = Author.create!(first_name: 'Terry', last_name: 'Pratchett', webpage:"nil", dob: Date.new(1948, 4, 28), dod: Date.new(2015, 3, 12))
 a2 = Author.create!(first_name: 'Neil', last_name: 'Gaiman', webpage:"http://neilgaiman.com/", dob: Date.new(1960, 11, 10), dod: Date.new())
-a3 = Author.create!(first_name: 'J.K.	', last_name: 'Rowling', webpage:"http://jkrowling.com/", dob: Date.new(1965, 7, 31), dod: Date.new())
+a3 = Author.create!(first_name: 'J.K.', last_name: 'Rowling', webpage:"http://jkrowling.com/", dob: Date.new(1965, 7, 31), dod: Date.new())
 
 
 
@@ -40,3 +40,7 @@ r3 = Review.create!(score: 2, summary: "There is so much going on, so many littl
 The collaboration between two of the finest fantasy authors of our generation is nothing short of brilliant, and while they both shared everything equally and did it for fun, Pratchett has said they wouldn't do it again for a big clock.
 The antichrist has been born, the four bikers of apocalypse have gathered, its the end of the world as we know it and its all happening in the small english suburb of Lower Tadfield. This is not the news the angel Aziraphale and the demon Crowley had been hoping for as they have become quite accustomed to their lives on earth and are starting to have second thoughts about the whole Armageddon thing. 
 Despite being mortal enemies they decide to work together to help raise the antichrist in the hope that when it comes time for the apocalypse, the antichrist might just decide not to carry through with it. If only those meddling satanic nuns hadn't got to him first...")
+
+u1 = User.create!(first_name: 'Homer', last_name: 'Simpson', email:"homer@email.com")
+u2 = User.create!(first_name: 'Lisa', last_name: 'Simpson', email:"lsimp@hotmail.com")
+u3 = User.create!(first_name: 'Bart', last_name: 'Simpson', email:"bsmpson@memphis.edu")
