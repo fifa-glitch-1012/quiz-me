@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'reviews', to: 'reviews#index', as: 'review' # index
+  get 'reviews/:id', to: 'reviews#show', as: 'review' # show
   get 'authors', to: 'authors#index', as: 'authors' # index
   get 'authors/:id', to: 'authors#show', as: 'author' # show
   get 'books', to: 'books#index', as: 'books' # index
@@ -10,7 +12,7 @@ Rails.application.routes.draw do
   post 'student_feedback', to: 'static_pages#student_feedback', as: 'student_feedback'
   get 'student-info', to: 'static_pages#student_info', as: 'student_info'
   get 'profile', to: 'pages#profile', as: 'profile'
-  get 'review', to: 'pages#review', as: 'review'
+  # get 'review', to: 'pages#review', as: 'review'
   get 'welcome', to: 'static_pages#welcome', as: 'welcome'
   get 'about', to: 'static_pages#about', as: 'about'
   get 'question', to: 'pages#question', as: 'question'
