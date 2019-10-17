@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'authors', to: 'authors#index', as: 'authors' # index
+  get 'authors/:id', to: 'authors#show', as: 'author' # show
   get 'books', to: 'books#index', as: 'books' # index
   get 'books/:id', to: 'books#show', as: 'book' # show
   get 'mc_questions', to: 'mc_questions#index', as: 'mc_questions' # index
