@@ -7,6 +7,7 @@ class AuthorsController < ApplicationController
     end
   end
 
+
   def show
     author = Book.find(params[:id])
     respond_to do |format|
@@ -15,3 +16,5 @@ class AuthorsController < ApplicationController
   end
 
 end
+
+
