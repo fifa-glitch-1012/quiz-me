@@ -1,15 +1,36 @@
+# == Schema Information
+#
+# Table name: authors
+#
+#  id         :bigint           not null, primary key
+#  dob        :date
+#  dod        :date
+#  first_name :string
+#  last_name  :string
+#  webpage    :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  first_name: MyString
-  last_name: MyString
-  webpage: MyString
-  dob: 2019-10-16
-  dod: 2019-10-16
+  first_name: Terry
+  last_name: Pratchett
+  webpage: nil
+  dob: 28 April 1948  #fix date in seeds
+  dod: 12 March 2015 #fix date in seeds
 
 two:
-  first_name: MyString
-  last_name: MyString
-  webpage: MyString
-  dob: 2019-10-16
-  dod: 2019-10-16
+  first_name: Neil
+  last_name: Gaiman
+  webpage: http://neilgaiman.com/
+  dob: 10 November 1960
+  dod: nil
+
+three:
+  first_name: J. K.
+  last_name: Rowling
+  webpage: http://jkrowling.com/
+  dob: 31 July 1965
+  dod: nil

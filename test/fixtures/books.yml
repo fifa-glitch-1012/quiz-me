@@ -1,15 +1,37 @@
+# == Schema Information
+#
+# Table name: books
+#
+#  id               :bigint           not null, primary key
+#  genre            :string
+#  isbn             :string
+#  publication_date :date
+#  publisher        :string
+#  title            :string
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#
+
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  publisher: MyString
-  publication_date: 2019-10-16
-  isbn: MyString
-  genre: MyString
+  title: American Gods
+  publisher: William Morrow, Headline
+  publication_date: 19 June 2001  #fix date in seeds
+  isbn: 0-380-97365-0	 #fix isbn
+  genre: Fantasy
 
 two:
-  title: MyString
-  publisher: MyString
-  publication_date: 2019-10-16
-  isbn: MyString
-  genre: MyString
+  title: 'Good Omens: The Nice and Accurate Prophecies of Agnes Nutter, Witch'
+  publisher: Gollancz (UK) / Workman (US)
+  publication_date: 1 May 1990  #fix date in seeds 
+  isbn: 0-575-04800-X	 #fix isbn
+  genre: Comedy
+
+three:
+  title: The Colour of Magic
+  publisher: Colin Smythe
+  publication_date: 24 November 1983  #fix date in seeds
+  isbn: 0-86140-324-X	 #fix isbn
+  genre: Fantasy
+
