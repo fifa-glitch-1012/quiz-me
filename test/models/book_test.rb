@@ -21,8 +21,4 @@ class BookTest < ActiveSupport::TestCase
     end
   end
 
-  test "name should not be too long" do
-    books.title = "a" * 51
-    assert_not @user.valid? 
-    end
 end

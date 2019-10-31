@@ -13,16 +13,15 @@ q3 = McQuestion.create!(question: 'What does the C in MVC stand for?', answer: '
 
 
 
-b1 = Book.create!(title: 'American Gods	', publisher: 'William Morrow, Headline', publication_date: Date.new(2001, 6, 19), isbn: '0-380-97365-0', genre: "Fantasy")
-b2 = Book.create!(title: 'Good Omens: The Nice and Accurate Prophecies of Agnes Nutter, Witch', publisher: 'Gollancz (UK) / Workman (US)', publication_date: Date.new(1990, 5, 1), isbn: '0-575-04800-X', genre: "Comedy")
-b3 = Book.create!(title: 'The Colour of Magic', publisher: 'Colin Smythe', publication_date: Date.new(1983, 11, 24), isbn: '0-86140-324-X', genre: "Fantasy")
+b1 = Book.create!(title: 'American Gods	', publisher: 'William Morrow, Headline', publication_date: '19 June 2001', isbn: '0-380-97365-0', genre: "Fantasy")
+b2 = Book.create!(title: 'Good Omens: The Nice and Accurate Prophecies of Agnes Nutter, Witch', publisher: 'Gollancz (UK) / Workman (US)', publication_date:  '1 May 1990', isbn: '0-575-04800-X', genre: "Comedy")
+b3 = Book.create!(title: 'The Colour of Magic', publisher: 'Colin Smythe', publication_date: '24 November 1983', isbn: '0-86140-324-X', genre: "Fantasy")
 
 
 
-a1 = Author.create!(first_name: 'Terry', last_name: 'Pratchett', webpage:"nil", dob: Date.new(1948, 4, 28), dod: Date.new(2015, 3, 12))
-a2 = Author.create!(first_name: 'Neil', last_name: 'Gaiman', webpage:"http://neilgaiman.com/", dob: Date.new(1960, 11, 10), dod: Date.new())
-a3 = Author.create!(first_name: 'J.K.', last_name: 'Rowling', webpage:"http://jkrowling.com/", dob: Date.new(1965, 7, 31), dod: Date.new())
-
+a1 = Author.create!(first_name: 'Terry', last_name: 'Pratchett', webpage: nil, dob: '28 April 1948', dod: '12 March 2015')
+a2 = Author.create!(first_name: 'Neil', last_name: 'Gaiman', webpage:"http://neilgaiman.com/", dob: '10 November 1960', dod: nil)
+a3 = Author.create!(first_name: 'J.K.', last_name: 'Rowling', webpage:"http://jkrowling.com/", dob: '31 July 1965', dod: nil)
 
 
 r1 = Review.create!(score: 5, summary: "This grand tale of ancient gods struggling to survive in today's USA has a chilly setting but provides a great summer escape.", full_text: "Beaches, like books, offer a dislocation from reality, and when taken together the effect is multiplied many times. 

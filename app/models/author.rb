@@ -16,11 +16,21 @@ class Author < ApplicationRecord
     validates :first_name, length: { maximum: 50 }    
     validates :last_name, length: { maximum: 50 }    
     validates :last_name, presence: true
-    #webpage	Must match be a valid URL as per the standard
-    #dob	Must be before today; must be present. fix dob in seeds
+    validates :webpage, format: { with: URI::regexp(%w(http https)) }
+    validate :dob_before_today
+    def dob_before_today
+        if Date.today <= dob
+            errors.add(:dob, "dob must be before today")
+        end
+    end
     validates :dob, presence: true
-    #dod	Must be after the dob; must be before tomorrow. fix dod in seeds
-
-
-
+    validate :after_dob
+    def after_dob
+        if dod <= dob 
+            errors.add(:dod, "dod must be after dob")
+        end
+        if Date.tomorrow <= dod 
+            errors.add(:dod, "dod must be before tomorrow")
+        end
+    end
 end

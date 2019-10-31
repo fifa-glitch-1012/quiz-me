@@ -11,11 +11,11 @@
 #
 
 class Review < ApplicationRecord
-    validates :score, length: { in: 0..5 }
     validates :score, presence: true
+    validates :score, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than: 6}
     validates :summary, length: { maximum: 200 }    
     validates :summary, presence: true
-    validates :summary, length: { maximum: 10000 }    
+    validates :full_text, length: { maximum: 10000 }    
 
 
 

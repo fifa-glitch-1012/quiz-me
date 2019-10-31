@@ -14,6 +14,10 @@ class User < ApplicationRecord
     validates :first_name, length: { maximum: 50 }  
     validates :last_name, length: { maximum: 50 }    
     validates :last_name, presence: true  
-    #email	Must match be a valid email address as per the standard; must be present; must be unique
+    validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
+    validates :email, presence: true
+    validates :email, uniqueness: true
+
+ 
 
 end

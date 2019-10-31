@@ -16,7 +16,7 @@ class Book < ApplicationRecord
     validates :title, length: { maximum: 100 }    
     validates :title, presence: true
     validates :publisher, length: { maximum: 50 }
-    #isbn validate here
+    validates :isbn, format: { with: /\A0-((\d{3}-\d{5})|(\d{5}-\d{3}))-\w\z/ }
     validates :genre, inclusion: { in: %w(Comedy Dystopia Fantasy Mystery Romance Science_Fiction Thriller Western) }
 
 
