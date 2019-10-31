@@ -17,20 +17,20 @@
 one:
   first_name: Terry
   last_name: Pratchett
-  webpage: nil
-  dob: 28 April 1948  #fix date in seeds
-  dod: 12 March 2015 #fix date in seeds
+  webpage: 
+  dob: 28 April 1948  
+  dod: 12 March 2015 
 
 two:
   first_name: Neil
   last_name: Gaiman
   webpage: http://neilgaiman.com/
   dob: 10 November 1960
-  dod: nil
+  dod: 
 
 three:
   first_name: J. K.
   last_name: Rowling
   webpage: http://jkrowling.com/
   dob: 31 July 1965
-  dod: nil
+  dod:

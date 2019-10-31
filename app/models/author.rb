@@ -16,21 +16,26 @@ class Author < ApplicationRecord
     validates :first_name, length: { maximum: 50 }    
     validates :last_name, length: { maximum: 50 }    
     validates :last_name, presence: true
-    validates :webpage, format: { with: URI::regexp(%w(http https)) }
+    validates :webpage, allow_nil: true, format: { with: URI::regexp(%w(http https)) }
     validate :dob_before_today
     def dob_before_today
-        if Date.today <= dob
-            errors.add(:dob, "dob must be before today")
+        if !dob.blank?
+            if Date.today <= dob
+                errors.add(:dob, "dob must be before today")
+            end
         end
     end
+
     validates :dob, presence: true
     validate :after_dob
     def after_dob
-        if dod <= dob 
-            errors.add(:dod, "dod must be after dob")
-        end
-        if Date.tomorrow <= dod 
-            errors.add(:dod, "dod must be before tomorrow")
+        if !dod.blank?  && !dob.blank?
+            if dod <= dob 
+                errors.add(:dod, "dod must be after dob")
+            end
+            if Date.tomorrow <= dod 
+                errors.add(:dod, "dod must be before tomorrow")
+            end
         end
     end
 end
