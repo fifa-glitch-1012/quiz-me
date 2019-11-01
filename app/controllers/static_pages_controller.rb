@@ -18,7 +18,10 @@ class StaticPagesController < ApplicationController
     end
 
     respond_to do |format|
-      format.html { render :contact, locals: { status_msg: form_status_msg, feedback: params } }
+      format.html {
+        flash.now[:status_msg] = form_status_msg
+        render :contact, locals: { feedback: params }
+      }
     end
   end
 

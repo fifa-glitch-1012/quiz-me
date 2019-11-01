@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get 'books', to: 'books#index', as: 'books' # index
   get 'books/:id', to: 'books#show', as: 'book' # show
   get 'mc_questions', to: 'mc_questions#index', as: 'mc_questions' # index
+  get 'mc_questions/new', to: 'mc_questions#new', as: 'new_mc_question' # new
+  post 'mc_questions', to: 'mc_questions#create'                        # create
   get 'mc_questions/:id', to: 'mc_questions#show', as: 'mc_question' # show
   post 'contact', to: 'static_pages#leave_feedback', as: 'leave_feedback'
   get 'contact', to: 'static_pages#contact', as: 'contact'
