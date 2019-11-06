@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   patch 'mc_questions/:id', to: 'mc_questions#update'                          # update (as needed)
   put 'mc_questions/:id', to: 'mc_questions#update'                            # update (full replacement)
   get 'mc_questions/:id', to: 'mc_questions#show', as: 'mc_question' # show
+  delete 'mc_questions/:id', to: 'mc_questions#destroy' # destroy route
   post 'contact', to: 'static_pages#leave_feedback', as: 'leave_feedback'
   get 'contact', to: 'static_pages#contact', as: 'contact'
   post 'student_feedback', to: 'static_pages#student_feedback', as: 'student_feedback'

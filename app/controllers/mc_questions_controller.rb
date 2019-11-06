@@ -72,5 +72,21 @@ class McQuestionsController < ApplicationController
     end
   end 
 
-
+  def destroy
+    # load existing object again from URL param
+    question = McQuestion.find(params[:id])
+    # destroy object
+    question.destroy
+    # respond_to block
+    respond_to do |format|
+      # html format block
+      format.html {
+        # success message
+        flash[:success] = 'Question removed successfully'
+        # redirect to index
+        redirect_to mc_questions_url
+      }
+    end
+  end 
 end
+
