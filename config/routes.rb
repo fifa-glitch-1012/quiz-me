@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+   # Quiz resources
+  get 'quizzes', to: 'quizzes#index', as: 'quizzes'               # index
+  get 'quizzes/new', to: 'quizzes#new', as: 'new_quiz'            # new
+  post 'quizzes', to: 'quizzes#create'                            # create
+  get 'quizzes/:id/edit', to: 'quizzes#edit', as: 'edit_quiz'     # edit
+  match 'quizzes/:id', to: 'quizzes#update', via: [:put, :patch]  # update
+  get 'quizzes/:id', to: 'quizzes#show', as: 'quiz'               # show
+  delete 'quizzes/:id', to: 'quizzes#destroy'                     # destroy
   get 'users', to: 'users#index', as: 'users' # index
   get 'users/:id', to: 'users#show', as: 'user' # show
   get 'reviews', to: 'reviews#index', as: 'reviews' # index
@@ -24,6 +32,7 @@ Rails.application.routes.draw do
   get 'welcome', to: 'static_pages#welcome', as: 'welcome'
   get 'about', to: 'static_pages#about', as: 'about'
   get 'question', to: 'pages#question', as: 'question'
+
 
   root to: redirect('/welcome', status: 302)
 

@@ -9,6 +9,15 @@
 #  question     :string
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
+#  quiz_id      :bigint
+#
+# Indexes
+#
+#  index_mc_questions_on_quiz_id  (quiz_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (quiz_id => quizzes.id)
 #
 
 class McQuestion < ApplicationRecord
@@ -31,4 +40,6 @@ class McQuestion < ApplicationRecord
             errors.add(:distractor_2, "can't be the same as any other choice")
         end
     end
+    
+    belongs_to :quiz
 end
