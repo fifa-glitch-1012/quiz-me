@@ -15,9 +15,9 @@ Rails.application.routes.draw do
   get 'authors/:id', to: 'authors#show', as: 'author' # show
   get 'books', to: 'books#index', as: 'books' # index
   get 'books/:id', to: 'books#show', as: 'book' # show
-  get 'mc_questions', to: 'mc_questions#index', as: 'mc_questions' # index
-  get 'mc_questions/new', to: 'mc_questions#new', as: 'new_mc_question' # new
-  post 'mc_questions', to: 'mc_questions#create'                        # create
+  get 'quizzes/:id/mc_questions', to: 'quiz_mc_questions#index', as: 'quiz_mc_questions' # nested index
+  get 'quizzes/:id/mc_questions/new', to: 'quiz_mc_questions#new', as: 'new_quiz_mc_question' # nested new
+  post 'quizzes/:id/mc_questions', to: 'quiz_mc_questions#create' # nested create
   get 'mc_questions/:id/edit', to: 'mc_questions#edit', as: 'edit_mc_question' # edit
   patch 'mc_questions/:id', to: 'mc_questions#update'                          # update (as needed)
   put 'mc_questions/:id', to: 'mc_questions#update'                            # update (full replacement)
@@ -32,6 +32,7 @@ Rails.application.routes.draw do
   get 'welcome', to: 'static_pages#welcome', as: 'welcome'
   get 'about', to: 'static_pages#about', as: 'about'
   get 'question', to: 'pages#question', as: 'question'
+  
 
 
   root to: redirect('/welcome', status: 302)

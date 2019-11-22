@@ -1,11 +1,5 @@
 class McQuestionsController < ApplicationController
 
-  def index
-    questions = McQuestion.all
-    respond_to do |format|
-      format.html { render :index, locals: {questions: questions } }
-    end
-  end
 
   def show
     question = McQuestion.find(params[:id])
@@ -14,32 +8,6 @@ class McQuestionsController < ApplicationController
     end
   end
 
-  def new
-    question = McQuestion.new
-    respond_to do |format|
-      format.html { render :new, locals: { question: question } }
-    end
-  end
-
-  def create
-    # new object from params
-    question = McQuestion.new(params.require(:mc_question).permit(:question, :answer, :distractor_1, :distractor_2))    
-    # respond_to block
-    respond_to do |format|
-      # html format block
-      format.html {
-        if question.save
-          # success message
-          flash[:success] = "Question saved successfully"
-          redirect_to mc_questions_url          
-        else
-          # error message
-          flash.now[:error] = "Error: Question could not be saved"
-          render :new, locals: { question: question }          
-        end
-      } 
-    end
-  end
 
   def edit
     # object to use in form
@@ -61,7 +29,7 @@ class McQuestionsController < ApplicationController
           # success message
           flash[:success] = 'Question updated successfully'
           # redirect to index
-          redirect_to mc_questions_url   
+          redirect_to quiz_url(question.quiz_id)
         else
           # error message
           flash.now[:error] = 'Error: Question could not be updated'
@@ -70,7 +38,8 @@ class McQuestionsController < ApplicationController
         end
       }
     end
-  end 
+  end
+
 
   def destroy
     # load existing object again from URL param
@@ -84,9 +53,11 @@ class McQuestionsController < ApplicationController
         # success message
         flash[:success] = 'Question removed successfully'
         # redirect to index
-        redirect_to mc_questions_url
+        redirect_to quiz_url(question.quiz_id)
       }
     end
-  end 
+  end
+
+  
 end
 
