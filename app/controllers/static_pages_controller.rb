@@ -1,5 +1,7 @@
 class StaticPagesController < ApplicationController
 
+  before_action :authenticate_user!, except: [:welcome, :about]
+
   def leave_feedback   #contact feedback
     required = [:name, :email, :reply, :feedback_type, :message]
     form_complete = true

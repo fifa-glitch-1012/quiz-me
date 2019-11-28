@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+
+    before_action :authenticate_user!
     def profile
         respond_to do |format|
             format.html { render :profile }

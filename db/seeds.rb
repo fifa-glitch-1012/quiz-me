@@ -9,6 +9,8 @@
 quiz1 = Quiz.create!(title: 'MVC Concepts', description: 'This quiz covers concepts related to the Model-View-Controller web application architecture.')
 quiz2 = Quiz.create!(title: 'Rails Concepts', description: 'This quiz covers concepts related to web application development using the Ruby on Rails platform.')
 
+q1 = Quiz.create!(creator: u1, title: 'MVC Concepts', description: 'This quiz contains questions related to the Model-View-Controller web application architecture.')
+q2 = Quiz.create!(creator: u2, title: 'Rails Concepts', description: 'This quiz contains questions related to web application development using the Ruby on Rails platform.')
 
 q1 = McQuestion.create!(quiz: quiz1, question: 'What does the M in MVC stand for?', answer: 'Model', distractor_1: 'Media', distractor_2: 'Mode')
 q2 = McQuestion.create!(quiz: quiz1, question: 'What does the V in MVC stand for?', answer: 'View', distractor_1: 'Verify', distractor_2: 'Validate')
@@ -48,3 +50,6 @@ Despite being mortal enemies they decide to work together to help raise the anti
 u1 = User.create!(first_name: 'Homer', last_name: 'Simpson', email:"homer@email.com")
 u2 = User.create!(first_name: 'Lisa', last_name: 'Simpson', email:"lsimp@hotmail.com")
 u3 = User.create!(first_name: 'Bart', last_name: 'Simpson', email:"bsmpson@memphis.edu")
+
+u1 = User.create!(email: 'alice@gmail.com', password: 'password')
+u2 = User.create!(email: 'bob@gmail.com', password: 'password')

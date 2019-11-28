@@ -1,4 +1,6 @@
 class QuizMcQuestionsController < ApplicationController
+
+  before_action :authenticate_user!
     def index
         quiz = Quiz.includes(:mc_questions).find(params[:id])
         respond_to do |format|

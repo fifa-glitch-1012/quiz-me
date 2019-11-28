@@ -1,6 +1,6 @@
 class McQuestionsController < ApplicationController
 
-
+  before_action :authenticate_user!
   def show
     question = McQuestion.find(params[:id])
     respond_to do |format|

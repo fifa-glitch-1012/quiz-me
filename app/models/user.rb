@@ -23,11 +23,16 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-    validates :first_name, length: { maximum: 50 }  
-    validates :last_name, length: { maximum: 50 }    
-    validates :last_name, presence: true  
-    validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
-    validates :email, presence: true
-    validates :email, uniqueness: true
+  validates :first_name, length: { maximum: 50 }  
+  validates :last_name, length: { maximum: 50 }    
+  #validates :last_name, presence: true  
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
+  validates :email, presence: true
+  validates :email, uniqueness: true
+
+  has_many :quizzes,
+    class_name: 'Quiz',
+    foreign_key: 'user_id',
+    inverse_of: :creator
 
 end
