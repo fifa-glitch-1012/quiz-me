@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
    # Quiz resources
   get 'quizzes', to: 'quizzes#index', as: 'quizzes'               # index
   get 'quizzes/new', to: 'quizzes#new', as: 'new_quiz'            # new
